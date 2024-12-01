@@ -1,0 +1,15 @@
+
+
+let rec read_lines () =
+  try
+    read_lines ()  :: read_lines ()  
+  with
+    End_of_file -> []
+
+let numbers line =
+  match line
+        |> String.split_on_char ' '
+        |> List filter (fun s -> s <> "")
+  with
+  | [ a; b] -> (int_of_string a, int_of_string b)
+  | _ -> failwith "Invalid format";
