@@ -1,7 +1,7 @@
 (executable
  (public_name day1)
  (name day1))
-(executable
- (public_name day1_part2)
- (name day1_part2))
 
+(executable
+ (public_name day2)
+ (name day2))

@@ -18,15 +18,26 @@ let numbers line =
 let sum =
   List.fold_left (+) 0
 
+let pairs = read_lines ()
+            |> List.map numbers
+let first = List.map fst pairs
+let second = List.map snd pairs
+
 let () =
-  let pairs = read_lines ()
-          |> List.map numbers
-  in
-  let first = List.map fst pairs in
-  let second = List.map snd pairs in
   let first' = List.sort compare first in
   let second' = List.sort compare second in
   List.combine first' second'
   |> List.map (fun (a,b) -> abs (a-b))
   |> sum
-  |> print_int
+  |> print_int ;
+  print_char '\n'
+
+
+let count n =
+  List.fold_left (fun acc m -> if n=m then acc+n else acc) 0
+
+let () =
+  List.map (fun n -> count n second) first
+  |> sum
+  |> print_int ;
+  print_char '\n'
