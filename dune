@@ -5,3 +5,17 @@
 (executable
  (public_name day2)
  (name day2))
+
+(executable
+ (public_name day3)
+ (libraries re)
+ (name day3))
+ 
+(executable
+ (public_name day4)
+ (name day4))
+
+(executable
+ (public_name day5)
+ (name day5))
+
